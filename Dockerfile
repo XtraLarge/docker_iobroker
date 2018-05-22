@@ -33,9 +33,9 @@ RUN npm install iobroker --unsafe-perm && echo $(hostname) > .install_host
 RUN iobroker repo set latest
 RUN iobroker update
 RUN npm cache clean
-RUN npm init
-RUN npm install iobroker.js-controller --production
-RUN iobroker upgrade 
+#RUN npm init
+#RUN npm install iobroker.js-controller --production
+#RUN iobroker upgrade 
 RUN update-rc.d iobroker.sh remove
 RUN npm install node-gyp -g
 
