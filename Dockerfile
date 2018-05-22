@@ -30,6 +30,8 @@ RUN chmod +x iobroker_startup.sh
 WORKDIR /opt/iobroker/
 
 RUN npm install iobroker --unsafe-perm && echo $(hostname) > .install_host
+RUN iobroker repo latest
+RUN iobroker update
 RUN update-rc.d iobroker.sh remove
 RUN npm install node-gyp -g
 
