@@ -31,7 +31,9 @@ WORKDIR /opt/iobroker/
 
 RUN npm install iobroker --unsafe-perm && echo $(hostname) > .install_host
 RUN iobroker repo set latest
-RUN npm cache clean
+RUN npm install lru-cache --save
+RUN npm install archy --save
+RUN iobroker upgrade self
 RUN update-rc.d iobroker.sh remove
 RUN npm install node-gyp -g
 
