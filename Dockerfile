@@ -34,6 +34,7 @@ RUN iobroker repo set latest
 RUN npm install lru-cache --save
 RUN npm install archy --save
 RUN iobroker upgrade self
+RUN iobroker upgrade
 RUN update-rc.d iobroker.sh remove
 RUN npm install node-gyp -g
 
